@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thayer Partners | Technology and AI Plan</title>
+<meta name="description" content="Technology and AI plan prepared for Thayer Partners by Lorenz Valdez.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#16365c;--navy-deep:#0e2440;--blue:#2a5d93;--blue-light:#4f86c0;
+  --sky:#e8f0f8;--ink:#1c2533;--muted:#5b6778;--line:#dde4ee;
+  --bg:#ffffff;--bg-soft:#f6f8fb;--green:#2e7d55;--amber:#a86a12;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:17px}
+h1,h2,h3,h4{font-family:'Montserrat',sans-serif;color:var(--navy);line-height:1.25}
+a{color:var(--blue)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Montserrat',sans-serif;font-weight:600;color:var(--navy);font-size:14px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.brand .mark{width:30px;height:30px;border-radius:4px;background:linear-gradient(135deg,var(--navy),var(--blue-light));display:grid;place-items:center;color:#fff;font-family:Georgia,serif;font-size:18px}
+.nav{display:flex;gap:22px}
+.nav a{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-decoration:none;white-space:nowrap}
+.nav a:hover{color:var(--navy)}
+@media(max-width:880px){.nav{display:none}}
+
+.hero{background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 55%,var(--blue) 100%);color:#fff;padding:92px 0 84px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-120px;top:-120px;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.12),rgba(255,255,255,0) 70%)}
+.eyebrow{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#a9c6e6}
+.hero h1{color:#fff;font-size:clamp(32px,5.5vw,54px);font-weight:700;margin:14px 0 20px;max-width:820px}
+.hero p.lead{font-size:clamp(17px,2.2vw,20px);color:#d9e6f4;max-width:720px}
+.hero .meta{margin-top:34px;display:flex;flex-wrap:wrap;gap:10px 28px;font-size:14.5px;color:#bcd2ea}
+.hero .meta strong{color:#fff;font-weight:600}
+.parts{margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:820px;position:relative;z-index:1}
+@media(max-width:700px){.parts{grid-template-columns:1fr}}
+.parts a{display:block;text-decoration:none;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:14px 16px;color:#fff}
+.parts a span{display:block;font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.12em;color:#a9c6e6;text-transform:uppercase}
+.parts a b{font-family:'Montserrat',sans-serif;font-weight:600;font-size:15.5px}
+.parts a:hover{background:rgba(255,255,255,.14)}
+
+.partbar{background:var(--navy);color:#fff;padding:26px 0}
+.partbar .wrap{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.partbar span{font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.14em;color:#a9c6e6;text-transform:uppercase}
+.partbar h2{color:#fff;font-size:clamp(22px,3vw,28px);font-weight:700}
+
+section{padding:76px 0;border-bottom:1px solid var(--line)}
+section.soft{background:var(--bg-soft)}
+.sec-num{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--blue);text-transform:uppercase}
+section h2{font-size:clamp(26px,3.6vw,36px);margin:10px 0 16px;font-weight:700}
+section .intro{font-size:18.5px;color:var(--muted);max-width:760px;margin-bottom:36px}
+
+.quote{border-left:4px solid var(--blue);background:var(--sky);padding:24px 28px;border-radius:0 10px 10px 0;font-size:19px;color:var(--navy);font-style:italic;max-width:860px}
+.quote cite{display:block;margin-top:12px;font-style:normal;font-size:14px;color:var(--muted);font-weight:500}
+
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px}
+.card h3{font-size:18px;margin-bottom:8px;font-weight:600}
+.card p{color:var(--muted);font-size:15.5px}
+
+.goals{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:30px}
+@media(max-width:900px){.goals{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.goals{grid-template-columns:1fr}}
+.goal{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}
+.goal .n{width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;margin-bottom:10px}
+.goal h4{font-size:15.5px;margin-bottom:4px}
+.goal p{font-size:14px;color:var(--muted)}
+
+/* layers */
+.layers{display:grid;gap:10px;max-width:820px}
+.layer{border-radius:12px;padding:18px 22px;display:grid;grid-template-columns:200px 1fr;gap:18px;align-items:center}
+@media(max-width:640px){.layer{grid-template-columns:1fr;gap:6px}}
+.layer h4{font-size:16px}
+.layer p{font-size:15px}
+.l4{background:var(--navy);color:#d9e6f4}.l4 h4{color:#fff}
+.l3{background:var(--blue);color:#e1ecf7}.l3 h4{color:#fff}
+.l2{background:var(--sky);color:var(--navy)}
+.l1{background:#fff;border:1px solid var(--line);color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.chip{font-size:12.5px;padding:4px 10px;border-radius:20px;background:var(--sky);color:var(--navy);font-weight:500}
+.l4 .chip,.l3 .chip{background:rgba(255,255,255,.16);color:#fff}
+
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:#fff}
+table{width:100%;border-collapse:collapse;min-width:660px}
+th,td{padding:14px 16px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);font-size:15px}
+th{font-family:'Montserrat',sans-serif;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--navy);font-weight:600}
+td:first-child{font-weight:600;color:var(--navy);width:20%}
+tr:last-child td{border-bottom:none}
+tr:nth-child(even) td{background:var(--bg-soft)}
+.note{font-size:14px;color:var(--muted);margin-top:14px}
+
+.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px}
+.stat .v{font-family:'Montserrat',sans-serif;font-size:28px;font-weight:700;color:var(--navy)}
+.stat .l{font-size:13.5px;color:var(--muted);margin-top:2px}
+.found{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px}
+@media(max-width:700px){.found{grid-template-columns:1fr}}
+.found div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px;font-size:15px;color:var(--ink)}
+.found b{color:var(--navy);font-family:'Montserrat',sans-serif;font-weight:600}
+.takeaway{margin-top:24px;background:var(--navy);color:#e1ecf7;border-radius:12px;padding:22px 26px;font-size:17px}
+.takeaway b{color:#fff}
+
+/* systems */
+.sys{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px;display:grid;grid-template-columns:1.1fr 1fr;gap:26px;margin-bottom:16px}
+@media(max-width:780px){.sys{grid-template-columns:1fr;gap:16px}}
+.sys .top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.tag{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:20px}
+.t-time{background:var(--sky);color:var(--blue)}
+.t-safe{background:#e5f3ec;color:var(--green)}
+.t-vendor{background:#f8eedd;color:var(--amber)}
+.sys h3{font-size:20px;margin-bottom:8px}
+.sys p{color:var(--muted);font-size:15.5px}
+.sys .why{margin-top:12px;font-size:15px;color:var(--ink)}
+.sys .why b{color:var(--navy)}
+.steps{list-style:none;counter-reset:s;display:grid;gap:10px}
+.steps li{counter-increment:s;position:relative;padding:12px 14px 12px 48px;background:var(--bg-soft);border-radius:10px;font-size:15px}
+.steps li:before{content:counter(s);position:absolute;left:14px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--navy);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;display:grid;place-items:center}
+.steps-h{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.tools{margin-top:12px;font-size:13.5px;color:var(--muted)}
+.tools b{color:var(--navy)}
+
+.sec-list{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(max-width:700px){.sec-list{grid-template-columns:1fr}}
+.sec-item{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.sec-item h4{font-size:16px;margin-bottom:4px}
+.sec-item p{font-size:14.5px;color:var(--muted)}
+
+.road{display:grid}
+.phase{display:grid;grid-template-columns:170px 1fr;gap:24px;padding:22px 0;border-bottom:1px dashed var(--line)}
+.phase:last-child{border-bottom:none}
+@media(max-width:700px){.phase{grid-template-columns:1fr;gap:8px}}
+.phase .p{font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.12em;color:var(--blue);text-transform:uppercase}
+.phase .t{font-family:'Montserrat',sans-serif;font-size:21px;font-weight:700;color:var(--navy);margin-top:2px}
+.phase .d{font-size:13.5px;color:var(--muted)}
+.phase h3{font-size:18px;margin-bottom:6px}
+.phase p{color:var(--muted);font-size:15.5px}
+
+.offer{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px}
+.offer h3{font-size:17px;margin-bottom:6px}
+.offer p{font-size:15px;color:var(--muted)}
+
+.grow{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:820px){.grow{grid-template-columns:1fr}}
+.stage{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;border-top:4px solid var(--blue-light)}
+.stage.s3{border-top-color:var(--navy)}
+.stage .p{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--blue);text-transform:uppercase}
+.stage h3{font-size:18px;margin:4px 0 8px}
+.stage p{font-size:15px;color:var(--muted)}
+.stage .who{margin-top:12px;font-size:14px;color:var(--ink)}
+.stage .who b{color:var(--navy)}
+.triggers{margin-top:22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px 24px}
+.triggers h4{font-size:16px;margin-bottom:10px}
+.triggers ul{padding-left:20px;color:var(--muted);font-size:15px;display:grid;gap:6px}
+
+.qs{display:grid;grid-template-columns:1fr 1fr;gap:12px 24px}
+@media(max-width:700px){.qs{grid-template-columns:1fr}}
+.qs li{list-style:none;counter-increment:q;padding:14px 16px 14px 54px;position:relative;background:#fff;border:1px solid var(--line);border-radius:10px;font-size:15.5px}
+.qs{counter-reset:q}
+.qs li:before{content:counter(q);position:absolute;left:14px;top:12px;width:28px;height:28px;border-radius:50%;background:var(--sky);color:var(--blue);font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;display:grid;place-items:center}
+
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:34px;align-items:start}
+@media(max-width:800px){.about{grid-template-columns:1fr}}
+.about p{font-size:17.5px;color:var(--muted);margin-bottom:16px}
+.cta{background:linear-gradient(135deg,var(--navy-deep),var(--blue));color:#fff;border-radius:16px;padding:30px}
+.cta h3{color:#fff;font-size:21px;margin-bottom:10px}
+.cta p{color:#d6e4f3;font-size:15.5px;margin-bottom:18px}
+.cta a.btn{display:inline-block;background:#fff;color:var(--navy);font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;padding:12px 18px;border-radius:8px;text-decoration:none;margin:0 8px 8px 0}
+.cta a.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.6)}
+
+footer{background:var(--navy-deep);color:#9fb6d0;padding:30px 0;font-size:13px}
+footer p{margin-bottom:6px}
+
+@media print{.topbar{display:none}section{padding:36px 0}.hero{padding:46px 0}}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand"><div class="mark">T</div>Prepared for Thayer Partners</div>
+    <nav class="nav">
+      <a href="#part1">Your Goal</a>
+      <a href="#part2">What I Found</a>
+      <a href="#systems">Start Here</a>
+      <a href="#part3">Beyond AI</a>
+      <a href="#grow">Built to Grow</a>
+      <a href="#questions">Questions</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Portal Build and Business Review</div>
+    <h1>One place for your tools, your team, and your partners.</h1>
+    <p class="lead">A practical plan for Thayer Partners: what you're looking to build, what I found about your firm, and what can start helping your team right away.</p>
+    <div class="meta">
+      <div><strong>Prepared for</strong> Joe Ciliberti, CFP and Matthew Deckman</div>
+      <div><strong>Prepared by</strong> Lorenz Valdez</div>
+      <div><strong>Date</strong> October 14, 2026</div>
+    </div>
+    <div class="parts">
+      <a href="#part1"><span>Part 1</span><b>What you're looking for</b></a>
+      <a href="#part2"><span>Part 2</span><b>What I can do right now</b></a>
+      <a href="#part3"><span>Part 3</span><b>Beyond AI</b></a>
+    </div>
+  </div>
+</div>
+
+<!-- ================= PART 1 ================= -->
+<div class="partbar" id="part1"><div class="wrap"><span>Part 1</span><h2>What you're looking for</h2></div></div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-num">01 / Your Goal</div>
+    <h2>Your words, and what I heard in them.</h2>
+    <div class="quote">"We are wanting to build our own portal that incorporates all the different tech we use and use AI to tie it all together, making the experience for the person using it easy and intuitive."<cite>Joe Ciliberti, after Future Proof</cite></div>
+    <div class="goals">
+      <div class="goal"><div class="n">1</div><h4>One portal</h4><p>Every tool you use, reachable from one place.</p></div>
+      <div class="goal"><div class="n">2</div><h4>AI ties it together</h4><p>Less copying and hunting between systems.</p></div>
+      <div class="goal"><div class="n">3</div><h4>Easy to use</h4><p>Something the team wants to open every day.</p></div>
+      <div class="goal"><div class="n">4</div><h4>Data stays protected</h4><p>DOBs, SSNs, names, and addresses, under SEC rules.</p></div>
+      <div class="goal"><div class="n">5</div><h4>Build vs buy</h4><p>A clear, honest comparison of cost and risk.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="soft">
+  <div class="wrap">
+    <div class="sec-num">02 / How It Fits Together</div>
+    <h2>Four layers, built one at a time.</h2>
+    <p class="intro">Your current tools stay where they are. We connect them, put a smart assistant on top, and the portal becomes the front door to all of it.</p>
+    <div class="layers">
+      <div class="layer l4"><h4>The portal</h4><div><p>One login and one dashboard for advisors, staff, and eventually partner firms and clients.</p></div></div>
+      <div class="layer l3"><h4>AI assistant</h4><div><p>Reads, summarizes, drafts, and answers questions using your information.</p><div class="chips"><span class="chip">Claude, on Thayer's own business account</span></div></div></div>
+      <div class="layer l2"><h4>Connections</h4><div><p>Information moves between your systems automatically instead of being typed twice.</p><div class="chips"><span class="chip">Workflow automation (n8n)</span><span class="chip">Built-in CRM and HubSpot automations</span></div></div></div>
+      <div class="layer l1"><h4>Your current tools</h4><div><p>Kept as they are. We connect to them, not replace them.</p><div class="chips"><span class="chip">Schwab</span><span class="chip">CRM</span><span class="chip">Planning software</span><span class="chip">Reporting portal</span><span class="chip">HubSpot</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-num">03 / Build vs Buy</div>
+    <h2>Three paths to the same goal.</h2>
+    <p class="intro">Most firms your size land somewhere in the middle. A short assessment puts real numbers on each path, including the platform you saw at Future Proof.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th></th><th>Buy and connect</th><th>Hybrid</th><th>Custom build</th></tr></thead>
+        <tbody>
+          <tr><td>What it is</td><td>Existing advisor platforms and AI tools, set up to work together</td><td>Buy the core systems, build a branded layer and AI workflows on top</td><td>Your own portal, built from scratch and connected to every system</td></tr>
+          <tr><td>Time to value</td><td>Weeks</td><td>1 to 3 months</td><td>6 to 12+ months</td></tr>
+          <tr><td>Upfront cost</td><td>Low</td><td>Moderate</td><td>High</td></tr>
+          <tr><td>Ongoing cost</td><td>Subscriptions</td><td>Subscriptions plus light upkeep</td><td>Hosting, security, maintenance, and developers on call</td></tr>
+          <tr><td>Security burden</td><td>Mostly carried by established vendors</td><td>Shared, kept small by design</td><td>Fully on Thayer</td></tr>
+          <tr><td>Best when</td><td>Speed and safety matter most</td><td>You want a Thayer experience without carrying all the risk</td><td>Nothing on the market fits and the platform is a core asset</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PART 2 ================= -->
+<div class="partbar" id="part2"><div class="wrap"><span>Part 2</span><h2>What I can do for you right now</h2></div></div>
+
+<section class="soft">
+  <div class="wrap">
+    <div class="sec-num">04 / What I Found</div>
+    <h2>Before this call, I studied your firm.</h2>
+    <p class="intro">Everything below comes from public sources: your SEC filing, industry data sites, and thayerpartnersllc.com.</p>
+    <div class="grid g4">
+      <div class="stat"><div class="v">$685.7M</div><div class="l">Assets under management</div></div>
+      <div class="stat"><div class="v">373</div><div class="l">Clients, about $1.8M each on average</div></div>
+      <div class="stat"><div class="v">$248M</div><div class="l">In 18 company retirement plans</div></div>
+      <div class="stat"><div class="v">6</div><div class="l">Offices across PA, MA, GA, and FL</div></div>
+    </div>
+    <div class="found">
+      <div><b>Two businesses in one.</b> Wealth management for families and business owners, plus a partner platform for independent RIAs.</div>
+      <div><b>Partner growth is working.</b> Linder Financial added $15M in new assets and 54% revenue growth after partnering.</div>
+      <div><b>High net worth focus.</b> 140 high net worth accounts hold about $355M of your assets.</div>
+      <div><b>Small team, big reach.</b> 11 people and 7 advisors serving clients across multiple states.</div>
+      <div><b>Schwab custody.</b> Client assets are held at Charles Schwab.</div>
+      <div><b>Spread across systems.</b> Your website runs on HubSpot, and the client login sends people to a separate reporting system.</div>
+    </div>
+    <div class="takeaway"><b>What this tells me:</b> two growing businesses, a lot of value per advisor, and information spread across separate systems. That's exactly where connecting your tools and adding an AI assistant pays off, and where every hour saved per person matters.</div>
+  </div>
+</section>
+
+<section id="systems">
+  <div class="wrap">
+    <div class="sec-num">05 / Where I'd Start</div>
+    <h2>Five things that can help your team now.</h2>
+    <p class="intro">Each one stands on its own, helps right away, and becomes a building block of the future portal. Everything is built in Thayer's own accounts, so you own all of it.</p>
+
+    <div class="sys">
+      <div>
+        <div class="top"><span class="tag t-time">1 to 2 weeks</span><span class="tag t-safe">No client data</span></div>
+        <h3>The Thayer Brain</h3>
+        <p>An internal assistant that knows your procedures, compliance manual, partner program, and FAQs. Anyone on the team asks a question and gets an answer from your own documents in seconds.</p>
+        <p class="why"><b>Why it helps:</b> fewer interruptions across six offices, faster answers, and new hires and partner firms get up to speed without waiting on someone.</p>
+        <p class="tools"><b>Built with:</b> Claude on Thayer's business account</p>
+      </div>
+      <div>
+        <div class="steps-h">How it works</div>
+        <ol class="steps">
+          <li>Gather your procedures, compliance documents, and partner materials.</li>
+          <li>Set it up in your Claude account and test it with real staff questions.</li>
+          <li>Train the team in one session and refine based on feedback.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="sys">
+      <div>
+        <div class="top"><span class="tag t-time">3 to 4 weeks</span><span class="tag t-safe">Business info only</span></div>
+        <h3>Partner Onboarding System</h3>
+        <p>When a new firm joins your platform, one system sends the welcome, collects documents, tracks every step, sends reminders, and shows exactly who's stuck where.</p>
+        <p class="why"><b>Why it helps:</b> every new partner firm onboarded the same polished way, with less manual follow-up and a better first impression for the firms you're recruiting.</p>
+        <p class="tools"><b>Built with:</b> HubSpot, workflow automation, Claude for drafting</p>
+      </div>
+      <div>
+        <div class="steps-h">How it works</div>
+        <ol class="steps">
+          <li>Map your current onboarding steps with your operations team.</li>
+          <li>Automate the repetitive parts: forms, documents, emails, and reminders.</li>
+          <li>Launch with a simple tracker showing each firm's progress.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="sys">
+      <div>
+        <div class="top"><span class="tag t-time">2 to 3 weeks</span><span class="tag t-safe">No client data</span></div>
+        <h3>Commentary to Content</h3>
+        <p>Each piece of market commentary from your Chief Investment Officer becomes a blog post, a client email, and LinkedIn posts, written in Thayer's voice.</p>
+        <p class="why"><b>Why it helps:</b> more visibility with clients, prospects, and partner firms, without adding work for your advisors.</p>
+        <p class="tools"><b>Built with:</b> Claude, HubSpot, a required compliance approval step</p>
+      </div>
+      <div>
+        <div class="steps-h">How it works</div>
+        <ol class="steps">
+          <li>Commentary is published or dropped into a shared folder.</li>
+          <li>Drafts for each channel are created automatically in your voice.</li>
+          <li>Compliance approves before anything goes out.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="sys">
+      <div>
+        <div class="top"><span class="tag t-time">2 to 3 weeks</span><span class="tag t-vendor">Uses a vetted vendor</span></div>
+        <h3>Meeting Prep and Follow-Up</h3>
+        <p>Before each client meeting, a one-page brief. After it, notes, a follow-up email draft, and tasks, ready for the advisor to review.</p>
+        <p class="why"><b>Why it helps:</b> one of the biggest time savers in the industry for advisors serving hundreds of client relationships.</p>
+        <p class="tools"><b>Built with:</b> an established advisor AI tool, chosen and set up for your team</p>
+      </div>
+      <div>
+        <div class="steps-h">How it works</div>
+        <ol class="steps">
+          <li>Compare the leading advisor tools, including what you saw at Future Proof.</li>
+          <li>Run the choice through your compliance review.</li>
+          <li>Set it up, connect it to your CRM, and train the advisors.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="sys">
+      <div>
+        <div class="top"><span class="tag t-time">2 to 4 weeks</span><span class="tag t-safe">Sample data only</span></div>
+        <h3>Portal Prototype</h3>
+        <p>A clickable version of your future portal, using sample data, so your team and partner firms can see it and react before any big investment.</p>
+        <p class="why"><b>Why it helps:</b> decisions based on real feedback instead of guesses, and a clear spec for whoever builds the final version.</p>
+        <p class="tools"><b>Built with:</b> Claude Code, tracked in Thayer's own GitHub</p>
+      </div>
+      <div>
+        <div class="steps-h">How it works</div>
+        <ol class="steps">
+          <li>Define who uses it and the screens that matter most.</li>
+          <li>Build a clickable version with sample data.</li>
+          <li>Test it with advisors and partners, then finalize the plan.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="soft">
+  <div class="wrap">
+    <div class="sec-num">06 / Security First</div>
+    <h2>Client data protection is the starting point.</h2>
+    <p class="intro">The SEC's 2024 Regulation S-P amendments raised the bar for protecting customer information and overseeing service providers. Every step of this plan is built around that.</p>
+    <div class="sec-list">
+      <div class="sec-item"><h4>No client data in early work</h4><p>Assessment, prototypes, and quick wins run on documents and sample data only.</p></div>
+      <div class="sec-item"><h4>Business-grade AI only</h4><p>Enterprise accounts where your data isn't used to train models, with admin controls.</p></div>
+      <div class="sec-item"><h4>Your accounts, your ownership</h4><p>Everything lives in Thayer's accounts. My access can be removed anytime.</p></div>
+      <div class="sec-item"><h4>Compliance approves every vendor</h4><p>Each tool comes with the security questions your compliance team needs answered.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-num">07 / Roadmap</div>
+    <h2>Prove value first, then decide on the portal.</h2>
+    <div class="road">
+      <div class="phase"><div><div class="p">Step 1</div><div class="t">Assess</div><div class="d">2 to 4 weeks</div></div><div><h3>Technology and AI assessment</h3><p>Team interviews, a map of every tool and how information moves, a comparison of the Future Proof platform and alternatives, and a clear build vs buy recommendation.</p></div></div>
+      <div class="phase"><div><div class="p">Step 2</div><div class="t">Quick wins</div><div class="d">30 to 60 days</div></div><div><h3>Tools your team uses every day</h3><p>Start with the one or two systems above that solve your biggest pain point.</p></div></div>
+      <div class="phase"><div><div class="p">Step 3</div><div class="t">Prototype</div><div class="d">2 to 4 weeks</div></div><div><h3>See the portal before building it</h3><p>Clickable prototype, tested with your team and partner firms.</p></div></div>
+      <div class="phase"><div><div class="p">Step 4</div><div class="t">Build or buy</div><div class="d">Based on Step 1</div></div><div><h3>The full portal, done right</h3><p>Configure the chosen platforms, or a secure custom build with a specialized team. See "Built to Grow" below.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PART 3 ================= -->
+<div class="partbar" id="part3"><div class="wrap"><span>Part 3</span><h2>Beyond AI</h2></div></div>
+
+<section class="soft">
+  <div class="wrap">
+    <div class="sec-num">08 / Also Available</div>
+    <h2>Other ways I can help, if you need them.</h2>
+    <p class="intro">Before AI, I spent over 10 years in digital marketing and community building. If any of these would help Thayer grow, they're on the table.</p>
+    <div class="grid g3">
+      <div class="offer"><h3>Partner recruiting</h3><p>Landing pages, HubSpot email sequences, and outreach aimed at independent RIAs considering your partner program.</p></div>
+      <div class="offer"><h3>Video content</h3><p>Short, polished videos explaining your partner tiers, services, or market views, with no filming required.</p></div>
+      <div class="offer"><h3>Search visibility</h3><p>Helping Thayer show up when families and advisors search, including in AI tools like ChatGPT and Claude.</p></div>
+      <div class="offer"><h3>LinkedIn presence</h3><p>A steady, compliance-approved posting plan for your advisors' networks.</p></div>
+      <div class="offer"><h3>Events and community</h3><p>Turning your Growth Summit and Wealth Manager Council into content and relationships that keep paying off.</p></div>
+      <div class="offer"><h3>Website improvements</h3><p>Clearer pages, stronger calls to action, and a smoother path from visitor to conversation.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="grow">
+  <div class="wrap">
+    <div class="sec-num">09 / Built to Grow</div>
+    <h2>Start lean, scale up with the right team.</h2>
+    <p class="intro">Everything starts small and in your accounts. When the portal needs to handle real client data at full scale, a specialized team joins, and I lead that project for you so nothing gets lost.</p>
+    <div class="grow">
+      <div class="stage"><div class="p">Stage 1</div><h3>Foundation</h3><p>Assessment, quick wins, and the prototype. Fast, low risk, no client data.</p><p class="who"><b>Who:</b> me, in Thayer's accounts</p></div>
+      <div class="stage"><div class="p">Stage 2</div><h3>Connect</h3><p>Chosen platforms set up and connected, workflows expanded across the team and partner firms.</p><p class="who"><b>Who:</b> me, with your vendors</p></div>
+      <div class="stage s3"><div class="p">Stage 3</div><h3>Full portal</h3><p>Production portal with client data, custodian connections, and security testing.</p><p class="who"><b>Who:</b> a specialized development team, with me as project lead</p></div>
+    </div>
+    <div class="triggers">
+      <h4>When it's time for Stage 3</h4>
+      <ul>
+        <li>The portal needs to store or display real client data like SSNs or account details</li>
+        <li>It needs a live connection to Schwab or your reporting system</li>
+        <li>Clients or partner firms log in, not just your internal team</li>
+        <li>It has to run for many users with ongoing security monitoring</li>
+      </ul>
+      <p class="note">Everything built in Stages 1 and 2 is documented, so a larger team can pick it up cleanly.</p>
+    </div>
+  </div>
+</section>
+
+<section id="questions" class="soft">
+  <div class="wrap">
+    <div class="sec-num">10 / For Today's Conversation</div>
+    <h2>A few questions to shape the plan.</h2>
+    <ol class="qs">
+      <li>How is your team using AI today, if at all?</li>
+      <li>Has compliance approved or ruled out any AI tools?</li>
+      <li>Which platform caught your eye at Future Proof, and what stood out?</li>
+      <li>Who is the portal mainly for: your team, partner firms, clients, or all three?</li>
+      <li>What tools do you use today for CRM, planning, reporting, and documents?</li>
+      <li>Where does your team lose the most time each week?</li>
+      <li>How do partner firms plug into your back office today?</li>
+      <li>Is this for one office or the whole firm?</li>
+      <li>Do you have a preferred AI company, or are you open to a recommendation?</li>
+      <li>What would success look like six months from now?</li>
+    </ol>
+  </div>
+</section>
+
+<section id="next">
+  <div class="wrap">
+    <div class="sec-num">11 / Next Step</div>
+    <h2>Start with the assessment.</h2>
+    <div class="about">
+      <div>
+        <p>I'm Lorenz Valdez, a context engineer based in Las Vegas. I design AI workflows and systems that make complicated work simple, using Claude as my primary tool. I built and launched my own AI app from the ground up, so I know what it takes to turn an idea into something people use every day.</p>
+        <p>My approach starts with the problem, not the tool. For Thayer, that means understanding how your team and partners really work, protecting client data at every step, and recommending the path that fits, even when that means buying instead of building.</p>
+      </div>
+      <div class="cta">
+        <h3>Suggested next step</h3>
+        <p>Agree on the assessment scope, schedule short team interviews, and deliver a clear recommendation within 2 to 4 weeks.</p>
+        <a class="btn" href="mailto:7704.lorenz@gmail.com?subject=Thayer%20Partners%20Next%20Steps">Email Lorenz</a>
+        <a class="btn ghost" href="https://lorenzvaldez.carrd.co" target="_blank" rel="noopener">Portfolio</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Prepared for Thayer Partners by Lorenz Valdez, October 2026.</p>
+    <p>Firm figures are drawn from Thayer's most recent public SEC filing (April 2026), industry data sites, and thayerpartnersllc.com. Figures vary slightly across sources.</p>
+  </div>
+</footer>
+
+</body>
+</html>
